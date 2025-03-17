@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glare | Solar phone case store</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #FFB347, #FF8C00, #FFD700);
+        }
+
+        /* Navigation Bar */
+        nav {
+            background: linear-gradient(to right, #FFB347, #FF8C00, #FFD700); /* Sun-themed gradient */
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white; /* White for contrast */
+            margin: 0 15px;
+            font-size: 18px;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #333; /* Darker hover effect */
+        }
+
+        .contact {
+            font-size: 16px;
+            color: white;
+            font-weight: bold;
+        }
+
+        /* Main Content Wrapper */
+        .main-content {
+            flex: 1; /* Pushes the footer down */
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 60px;
+            background: url('Assets/solarphonecase.jpg') no-repeat center center/cover;
+            color: white;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6);
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 10px;
+            background: rgba(0, 0, 0, 0.2);
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 10px;
+            box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        .hero button {
+            background-color: #FF6B00;
+            color: white;
+            padding: 15px 25px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        .hero button:hover {
+            background-color: #FF8C33;
+        }
+
+        /* Featured Products */
+        .featured {
+            text-align: center;
+            padding: 40px;
+        }
+
+        .featured h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        .product-list {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .product {
+            background: #fff;
+            border-radius: 10px;
+            padding: 15px;
+            width: 250px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .product img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .product h3 {
+            font-size: 18px;
+            color: #333;
+        }
+
+        .product p {
+            font-size: 16px;
+            color: #555;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #FFDA6D;
+            padding: 20px;
+            text-align: center;
+            margin-top: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div>
+            <a href="home.html">Home</a>
+            <a href="products.html">Products</a>
+            <a href="about us.html">About Us</a>
+        </div>
+        <div class="contact">
+            Contact: +1 (876) 555-1234
+        </div>
+    </nav>
+
+    <!-- Main Content Wrapper -->
+    <div class="main-content">
+        <!-- Hero Section -->
+        <div class="hero">
+            <h1>Glare</h1>
+            <p style="color: #FF6B00; font-weight: bold;">Payment from the sun.</p>
+            <button onclick="window.location.href='products.html'">Shop Now</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <h4>Payment from the sun.</h4>
+        <p><strong>Contact Us:</strong></p>
+        <p>Email: support@glare.com</p>
+        <p>Phone: +1 (876) 555-1234</p>
+    </footer>
+
+</body>
+</html>
+
+
+
+
+
+

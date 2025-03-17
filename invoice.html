@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice | Solar Phone Case Store</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0e6b2;
+            margin: 0;
+            padding: 20px;
+        }
+        
+        h1, h2 {
+            color: #333;
+        }
+
+        .invoice {
+            background: #fff;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+        }
+
+        button {
+            padding: 10px 15px;
+            background-color: #FF6B00;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #FF8C33;
+        }
+    </style>
+</head>
+<body>
+    <h1>Invoice</h1>
+    <div class="invoice" id="invoice-details"></div>
+    <button onclick="window.location.href='index.html'">Back to Home</button>
+
+    <script>
+        function displayInvoice() {
+            const invoiceData = JSON.parse(localStorage.getItem('invoiceData'));
+
+            if (invoiceData) {
+                const invoiceContainer = document.getElementById("invoice-details");
+                let itemsDetails = invoiceData.items.map((item, index) => `${item} (Quantity: ${invoiceData.quantities[index]})`).join("<br>");
+
+                invoiceContainer.innerHTML = `
+                    <h2>Items Purchased:</h2>
+                    <p>${itemsDetails}</p>
+                    <p>Date: ${invoiceData.date}</p>
+                    <p>Subtotal: $${invoiceData.subtotal.toFixed(2)}</p>
+                    <p>Tax (10%): $${invoiceData.tax.toFixed(2)}</p>
+                    <p>Discount: $${invoiceData.discount.toFixed(2)}</p>
+                    <p class="total">Total: $${invoiceData.total.toFixed(2)}</p>
+                `;
+            } else {
+                document.getElementById("invoice-details").innerHTML = `<p>No invoice data found.</p>`;
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", displayInvoice);
+    </script>
+</body>
+</html>
+
+

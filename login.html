@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Solar Phone Case Store</title>
+    <link rel="stylesheet" href="D:/Web programming assignment 1/2002052_IA2/Codes/style.css">
+</head>
+<body>
+    <div class="login-container">
+        <h2>Solar Phone Case Store - Login</h2>
+        <form id="loginForm">
+            <label for="username">Username:</label>
+            <input type="text" id="username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" required>
+
+            <button type="submit">Login</button>
+        </form>
+        <p id="errorMessage"></p>
+    </div>
+
+    <script>
+        // Sample credentials
+        const validUsername = "Glare";
+        const validPassword = "@2002052"; // 8+ characters
+
+        let attempts = 3; // Track failed attempts
+
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent form from submitting
+
+            let usernameInput = document.getElementById("username").value;
+            let passwordInput = document.getElementById("password").value;
+            let errorMessage = document.getElementById("errorMessage");
+
+            if (usernameInput === validUsername && passwordInput === validPassword) {
+                alert("Login successful! Redirecting to Products Page...");
+                window.location.href = "products.html"; // Redirect to products page
+            } else {
+                attempts--;
+                errorMessage.textContent = `Incorrect credentials. ${attempts} attempts left.`;
+
+                if (attempts === 0) {
+                    alert("Too many failed attempts! Redirecting to error page...");
+                    window.location.href = "error.html"; // Redirect to error page
+                }
+            }
+        });
+    </script>
+</body>
+</html>
