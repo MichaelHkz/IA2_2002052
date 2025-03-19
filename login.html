@@ -36,8 +36,8 @@
             let errorMessage = document.getElementById("errorMessage");
 
             if (usernameInput === validUsername && passwordInput === validPassword) {
-                alert("Login successful! Redirecting to Home Page...");
-                window.location.href = "home.html"; 
+                alert("Login successful! Redirecting to Products Page...");
+                window.location.href = "Products.html"; 
             } else {
                 attempts--;
                 errorMessage.textContent = `Incorrect credentials. ${attempts} attempts left.`;
